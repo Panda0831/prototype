@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+ecdsa
+flet
+python-multipart
+passlib[bcrypt]
+email-validator
+python-jose[cryptography]
+pytest
+Pillow

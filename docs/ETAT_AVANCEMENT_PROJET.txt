@@ -1,0 +1,64 @@
+================================================================================
+RAPPORT D'AVANCEMENT : PROJET HAZO LOVA (MADAGASCAR 2035)
+================================================================================
+Date : Mardi 5 Mai 2026
+État actuel : PHASE 2 - Développement Technique (EN COURS)
+Cible : Présentation finale le 20 Mai 2026
+--------------------------------------------------------------------------------
+
+1. OBJECTIF DU PROJET
+---------------------
+Développer une infrastructure blockchain décentralisée et optimisée pour 
+Madagascar, répondant à quatre enjeux critiques :
+- La traçabilité des Produits Agricoles (Exportation).
+- La certification des Diplômes (Éducation).
+- La gestion foncière sans double vente (Propriété).
+- Le micro-crédit rural (Finance).
+
+2. RÉALISATIONS (CE QUI A ÉTÉ FAIT)
+-----------------------------------
+
+A. DÉFINITION DES SCÉNARIOS D'UTILISATION (TERMINÉ) :
+   Trois cas d'usage réels ont été modélisés :
+   - Scénario A : Vente de terrain sécurisée via Union-Find.
+   - Scénario B : Validation de blocs optimisée énergétiquement par IA.
+   - Scénario C : Vérification instantanée d'authenticité de diplôme via Merkle Tree.
+
+B. CONCEPTION ARCHITECTURALE (UML) :
+   Logique du système divisée en 4 couches (Données, Réseau, Intelligence, Métier).
+
+C. STRUCTURE DU PROJET :
+   Arborescence mise en place avec les modules /src/blockchain, /src/algorithms, etc.
+
+D. SÉCURITÉ ET CRYPTOGRAPHIE (TERMINÉ) :
+   - Implémentation du module Crypto utilisant 'ecdsa' (SECP256k1) pour la blockchain.
+   - Intégration de 'bcrypt' direct pour le hachage sécurisé des mots de passe (optimisé pour Python 3.13).
+   - Développement des structures de base : Transactions signées et Arbres de Merkle.
+
+E. ALGORITHMES DE STRUCTURE (EN COURS) :
+   - UNION-FIND (TERMINÉ) : Implémentation de la structure de données pour la gestion des titres fonciers.
+   - VALIDATION : Tests unitaires effectués et réussis (5/5 tests validés).
+
+F. API BACKEND ET PERSISTANCE (TERMINÉ) :
+   - FASTAPI (TERMINÉ) : Architecture REST robuste avec gestion des erreurs.
+   - AUTHENTIFICATION (TERMINÉ) : Routes Signup/Signin fonctionnelles avec validation Pydantic.
+   - IDENTITÉ BLOCKCHAIN (TERMINÉ) : Génération automatique de paires de clés (publique/privée) lors de l'inscription.
+   - BASE DE DONNÉES (TERMINÉ) : Persistance SQL (SQLAlchemy/SQLite) pour les utilisateurs et transactions.
+   - ROUTES BLOCKCHAIN (TERMINÉ) : Consultation de la chaîne, ajout de transactions et minage.
+   - INTÉGRATION UNION-FIND (TERMINÉ) : Point de terminaison API pour la vérification foncière.
+
+3. JUSTIFICATION DES CHOIX ALGORITHMIQUES
+-----------------------------------------
+- UNION-FIND : Complexité quasi-constante pour la gestion foncière.
+- A* (A-STAR) : Optimisation de la propagation via la géographie des districts.
+- Q-LEARNING : Sélection intelligente des validateurs pour l'économie d'énergie.
+
+4. PROCHAINES ÉTAPES (EN COURS)
+-------------------------------
+1. Finaliser les algorithmes de recherche (A*) et d'apprentissage (Q-Learning).
+2. Intégrer les cas d'utilisation métier complexes (Microfinance, Vanille).
+3. Développer l'interface Web (React) pour consommer l'API d'authentification.
+
+--------------------------------------------------------------------------------
+Ce document sert de base pour la rédaction du mémoire technique final.
+================================================================================

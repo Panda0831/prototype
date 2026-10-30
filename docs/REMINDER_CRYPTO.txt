@@ -1,0 +1,16 @@
+# Reminder : Sécurisation Cryptographique (Post-MVP)
+
+Ce projet nécessite une refonte de la gestion des clés privées pour passer d'un modèle "Demo" à une architecture sécurisée conforme aux standards blockchain.
+
+## Plan d'action :
+1. **Migration vers Signature Mobile (Option C)** :
+   - Déplacer la génération des clés (ECDSA / SECP256k1) côté client (React Native).
+   - Utiliser un stockage sécurisé (expo-secure-store ou react-native-keychain) pour conserver la clé privée sur l'appareil.
+   - Modifier l'API backend pour qu'elle accepte des transactions déjà signées (le backend ne doit plus signer lui-même).
+
+2. **Suppression des Contournements** :
+   - Supprimer `"SIG_PROD_DEMO"` et `"SIG_COLLECTEUR_DEMO"` du code de validation `src/blockchain/transaction.py`.
+   - Garantir que seules les signatures cryptographiques valides (générées via les clés privées des utilisateurs) sont acceptées.
+
+3. **Intégrité Backend** :
+   - Le backend devient un simple validateur (vérification de signature via clé publique enregistrée en DB).

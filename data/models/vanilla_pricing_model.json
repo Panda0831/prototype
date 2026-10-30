@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "trained_at": "2026-10-30T01:05:50",
+  "dataset": "data/madagascar_vanilla_quality_pricing.csv",
+  "n_samples": 1000,
+  "districts": [
+    "Ambanja",
+    "Andapa",
+    "Antalaha",
+    "Mananara Nord",
+    "Maroantsetra",
+    "Sambava",
+    "Vohemar"
+  ],
+  "feature_means": {
+    "bean_length_cm": 14.781624999999998,
+    "moisture_pct": 30.955375,
+    "vanillin_pct": 1.6707625,
+    "maturity_pct": 83.54962499999999,
+    "mold_detected": 0.0
+  },
+  "feature_stds": {
+    "bean_length_cm": 2.8627739797921525,
+    "moisture_pct": 9.890990653588496,
+    "vanillin_pct": 0.43819350017286884,
+    "maturity_pct": 13.022362491475,
+    "mold_detected": 1.0
+  },
+  "weights": {
+    "fair_farmgate_price_mga": [
+      166399.8044549028,
+      23415.78711615514,
+      12649.064536945863,
+      17727.155990141986,
+      25209.277198751995,
+      -62057.95663009055,
+      2031.6783464492787,
+      939.7432510408335,
+      -204.57498019968216,
+      2575.7865268848145,
+      -1363.4670020273156,
+      -734.5927061811299,
+      -3244.5734359676962
+    ],
+    "fob_export_price_usd": [
+      157.44897595752215,
+      24.231980790153965,
+      10.760046005846855,
+      18.417190432731612,
+      24.27760891067397,
+      -61.209325689783626,
+      -0.11582550002933356,
+      0.31999023584335307,
+      0.7200415923289727,
+      2.3925545425762906,
+      0.3952457906544524,
+      -1.6006028270885233,
+      -2.1114038341534327
+    ]
+  },
+  "metrics": {
+    "n_samples": 1000,
+    "n_train": 800,
+    "n_test": 200,
+    "n_features": 13,
+    "ridge_lambda": 1.0,
+    "targets": {
+      "fair_farmgate_price_mga": {
+        "mae": 18001.54,
+        "rmse": 22707.14,
+        "r2": 0.8828,
+        "mape_pct": 17.33,
+        "baseline_mae": 56528.24
+      },
+      "fob_export_price_usd": {
+        "mae": 16.4,
+        "rmse": 22.08,
+        "r2": 0.8898,
+        "mape_pct": 18.81,
+        "baseline_mae": 56.0
+      }
+    }
+  }
+}

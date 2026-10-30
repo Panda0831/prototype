@@ -1,0 +1,42 @@
+================================================================================
+STRATÉGIE DE COMPARAISON : BASELINE vs VERSION OPTIMISÉE
+================================================================================
+Conformément aux exigences du thème "Projet Transversal L2" (Noté sur 15 pts),
+ce document définit la méthodologie pour démontrer l'optimisation mesurable.
+
+1. MÉTRIQUES DE MESURE
+----------------------
+Chaque algorithme sera évalué selon :
+- Temps d'exécution (en nanosecondes/millisecondes).
+- Complexité algorithmique théorique (Notation Grand O).
+- Utilisation de la mémoire (si pertinente).
+
+2. CAS D'APPLICATION #1 : VÉRIFICATION D'AUTHENTICITÉ (DIPLÔMES)
+---------------------------------------------------------------
+- PROBLÈME : Vérifier qu'une transaction (diplôme) appartient à un bloc.
+- BASELINE (Naïve) : Recherche linéaire O(n).
+  * On parcourt toute la liste des transactions du bloc une par une.
+- OPTIMISATION : Preuve de Merkle (Merkle Proof) O(log n).
+  * On utilise le chemin de hachage dans l'Arbre de Merkle pour valider l'intégrité.
+
+3. CAS D'APPLICATION #2 : GESTION FONCIÈRE (TITRES DE PROPRIÉTÉ)
+---------------------------------------------------------------
+- PROBLÈME : Détecter si deux parcelles appartiennent au même domaine/propriétaire.
+- BASELINE (Naïve) : Recherche de chemin dans un graphe O(V + E).
+  * Utilisation d'un algorithme de type BFS (Breadth-First Search).
+- OPTIMISATION : Union-Find (DSU) O(α(n)).
+  * Utilisation de la structure avec compression de chemin et union par rang.
+
+4. PROTOCOLE DE TEST (BENCHMARKS)
+---------------------------------
+Un dossier /benchmarks contiendra des scripts automatisés pour :
+- Générer des jeux de données croissants (10, 100, 1000, 10000 éléments).
+- Exécuter les deux versions (Baseline vs Optimisée).
+- Générer un TABLEAU COMPARATIF final pour le rapport technique.
+
+5. LIVRABLES ATTENDUS DANS LE RAPPORT
+-------------------------------------
+- Tableau comparatif des temps de réponse.
+- Justification mathématique du choix de la structure de données.
+- Courbes de performance (si possible).
+================================================================================

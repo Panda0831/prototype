@@ -1,0 +1,11 @@
+# Architecture de Sécurité : Arbres de Merkle
+
+Dans l'infrastructure Hazo Lova, la sécurité est hiérarchisée :
+
+## 1. Sécurité de Base (Niveau Bloc)
+Chaque bloc de la blockchain utilise un Arbre de Merkle pour sceller l'ensemble des transactions qu'il contient (Foncier, Agriculture, Éducation, etc.). La racine de cet arbre (Merkle Root) est inscrite dans l'en-tête du bloc. Toute modification d'une seule transaction invalide le hash du bloc entier. C'est le moteur de confiance immuable partagé par tous les modules.
+
+## 2. Preuve d'Intégrité Utilisateur (Niveau Transaction)
+La "Preuve de Merkle" (Merkle Proof) est une surcouche fonctionnelle utilisée pour la vérification granulaire. 
+- Pour le moment, cette preuve est exposée prioritairement pour le module **Éducation** (diplômes) afin de permettre aux étudiants de prouver l'authenticité de leur diplôme auprès de tiers sans accéder à la base de données.
+- Cette approche est générique et peut être étendue aux modules Foncier et Agriculture pour permettre aux acteurs de prouver individuellement la véracité d'une transaction spécifique.

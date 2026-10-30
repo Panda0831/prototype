@@ -1,0 +1,102 @@
+{
+	"_type": "Project",
+	"_id": "AAAAAAFF+h6SjaM2Hec=",
+	"name": "HazoLova",
+	"ownedElements": [
+		{
+			"_type": "UMLModel",
+			"_id": "AAAAAAFF+qBWK6M3Z8Y=",
+			"_parent": { "$ref": "AAAAAAFF+h6SjaM2Hec=" },
+			"name": "Model",
+			"ownedElements": [
+				{
+					"_type": "UMLClassDiagram",
+					"_id": "diagram_main",
+					"name": "Architecture Hazo Lova",
+					"visible": true,
+					"defaultDiagram": true,
+					"ownedViews": [
+						{ "_type": "UMLClassView", "model": { "$ref": "class_blockchain" }, "font": "Arial;13;0", "left": 40, "top": 40, "width": 180, "height": 130 },
+						{ "_type": "UMLClassView", "model": { "$ref": "class_block" }, "font": "Arial;13;0", "left": 280, "top": 40, "width": 180, "height": 130 },
+						{ "_type": "UMLClassView", "model": { "$ref": "class_transaction" }, "font": "Arial;13;0", "left": 520, "top": 40, "width": 200, "height": 150 },
+						{ "_type": "UMLClassView", "model": { "$ref": "class_actor" }, "font": "Arial;13;0", "left": 40, "top": 240, "width": 150, "height": 80 },
+						{ "_type": "UMLClassView", "model": { "$ref": "class_merkletree" }, "font": "Arial;13;0", "left": 280, "top": 240, "width": 150, "height": 80 },
+						{ "_type": "UMLClassView", "model": { "$ref": "class_node" }, "font": "Arial;13;0", "left": 40, "top": 400, "width": 150, "height": 95 },
+						{ "_type": "UMLClassView", "model": { "$ref": "class_validator" }, "font": "Arial;13;0", "left": 280, "top": 400, "width": 150, "height": 95 },
+						{ "_type": "UMLClassView", "model": { "$ref": "class_graph" }, "font": "Arial;13;0", "left": 520, "top": 400, "width": 150, "height": 80 },
+						{ "_type": "UMLClassView", "model": { "$ref": "class_astar" }, "font": "Arial;13;0", "left": 720, "top": 400, "width": 150, "height": 80 },
+						{ "_type": "UMLClassView", "model": { "$ref": "class_qlearning" }, "font": "Arial;13;0", "left": 280, "top": 560, "width": 150, "height": 80 },
+						{ "_type": "UMLClassView", "model": { "$ref": "class_unionfind" }, "font": "Arial;13;0", "left": 520, "top": 560, "width": 150, "height": 80 }
+					]
+				},
+				{
+					"_type": "UMLClass",
+					"_id": "class_blockchain",
+					"name": "Blockchain",
+					"attributes": [
+						{ "_type": "UMLAttribute", "name": "chain", "type": "List<Block>" },
+						{ "_type": "UMLAttribute", "name": "difficulty", "type": "int" }
+					],
+					"operations": [{ "_type": "UMLOperation", "name": "add_transaction" }, { "_type": "UMLOperation", "name": "mine_pending" }],
+					"ownedElements": [
+						{
+							"_type": "UMLAssociation",
+							"_id": "assoc_bc_block",
+							"end1": { "_type": "UMLAssociationEnd", "reference": { "$ref": "class_blockchain" }, "aggregation": "composite" },
+							"end2": { "_type": "UMLAssociationEnd", "reference": { "$ref": "class_block" }, "multiplicity": "1..*" }
+						}
+					]
+				},
+				{
+					"_type": "UMLClass",
+					"_id": "class_block",
+					"name": "Block",
+					"attributes": [
+						{ "_type": "UMLAttribute", "name": "index", "type": "int" },
+						{ "_type": "UMLAttribute", "name": "hash", "type": "String" }
+					],
+					"operations": [{ "_type": "UMLOperation", "name": "calculate_hash" }],
+					"ownedElements": [
+						{
+							"_type": "UMLAssociation",
+							"_id": "assoc_block_tx",
+							"end1": { "_type": "UMLAssociationEnd", "reference": { "$ref": "class_block" }, "aggregation": "composite" },
+							"end2": { "_type": "UMLAssociationEnd", "reference": { "$ref": "class_transaction" }, "multiplicity": "1..*" }
+						},
+						{ "_type": "UMLDependency", "_id": "dep_merkle", "source": { "$ref": "class_block" }, "target": { "$ref": "class_merkletree" }, "name": "utilise" }
+					]
+				},
+				{
+					"_type": "UMLClass",
+					"_id": "class_transaction",
+					"name": "Transaction",
+					"attributes": [
+						{ "_type": "UMLAttribute", "name": "id", "type": "String" },
+						{ "_type": "UMLAttribute", "name": "type", "type": "TransactionType" },
+						{ "_type": "UMLAttribute", "name": "status", "type": "TransactionStatus" }
+					],
+					"operations": [{ "_type": "UMLOperation", "name": "validate" }]
+				},
+				{
+					"_type": "UMLClass",
+					"_id": "class_node",
+					"name": "Node",
+					"operations": [{ "_type": "UMLOperation", "name": "propagate" }]
+				},
+				{
+					"_type": "UMLClass",
+					"_id": "class_validator",
+					"name": "Validator",
+					"attributes": [{ "_type": "UMLAttribute", "name": "stake", "type": "float" }],
+					"ownedElements": [{ "_type": "UMLGeneralization", "_id": "gen_val_node", "source": { "$ref": "class_validator" }, "target": { "$ref": "class_node" } }]
+				},
+				{ "_type": "UMLClass", "_id": "class_actor", "name": "Actor" },
+				{ "_type": "UMLClass", "_id": "class_merkletree", "name": "MerkleTree" },
+				{ "_type": "UMLClass", "_id": "class_graph", "name": "Graph" },
+				{ "_type": "UMLClass", "_id": "class_astar", "name": "AStar", "ownedElements": [{ "_type": "UMLAssociation", "_id": "assoc_astar_graph", "end1": { "_type": "UMLAssociationEnd", "reference": { "$ref": "class_astar" } }, "end2": { "_type": "UMLAssociationEnd", "reference": { "$ref": "class_graph" } } }] },
+				{ "_type": "UMLClass", "_id": "class_qlearning", "name": "QLearning", "ownedElements": [{ "_type": "UMLDependency", "_id": "dep_q_val", "source": { "$ref": "class_qlearning" }, "target": { "$ref": "class_validator" }, "name": "sélectionne" }] },
+				{ "_type": "UMLClass", "_id": "class_unionfind", "name": "UnionFind", "ownedElements": [{ "_type": "UMLDependency", "_id": "dep_uf_tx", "source": { "$ref": "class_unionfind" }, "target": { "$ref": "class_transaction" }, "name": "vérifie" }] }
+			]
+		}
+	]
+}

@@ -1,0 +1,218 @@
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.profile-main-card {
+    background: var(--blanc);
+    padding: 50px;
+    border-radius: var(--radius-lg);
+    border: var(--border-main);
+    box-shadow: var(--shadow-sm);
+}
+
+.profile-header-info {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: var(--border-main);
+}
+
+.profile-avatar-large {
+    width: 90px;
+    height: 90px;
+    background: var(--navy);
+    color: var(--blanc);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+}
+
+.profile-titles h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 4px;
+}
+
+.user-role {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--emeraude);
+    letter-spacing: 0.5px;
+}
+
+.info-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 50px;
+}
+
+.info-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #64748b;
+}
+
+.info-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.info-value-box {
+    background: var(--off-white);
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: var(--border-main);
+}
+
+.info-value-box code {
+    font-family: monospace;
+    font-size: 14px;
+    color: var(--navy);
+    word-break: break-all;
+    line-height: 1.5;
+}
+
+.edit-profile-btn {
+    width: 100%;
+    padding: 18px;
+    background: var(--navy);
+    color: var(--blanc);
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.edit-profile-btn:hover {
+    background: var(--emeraude);
+    transform: translateY(-2px);
+}
+
+/* SIDE PANELS */
+.profile-side-panels {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.security-status-card, .recent-activity-card {
+    background: var(--blanc);
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    border: var(--border-main);
+}
+
+.security-meter {
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 3px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.meter-fill {
+    height: 100%;
+    background: var(--emeraude);
+    border-radius: 3px;
+}
+
+.security-tags {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sec-tag {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.sec-tag.protected {
+    background: rgba(45, 122, 88, 0.08);
+    color: var(--emeraude);
+}
+
+.sec-tag.warning {
+    background: rgba(212, 163, 115, 0.08);
+    color: var(--or);
+}
+
+.mini-activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.mini-act-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-left: 15px;
+    border-left: 2px solid #e2e8f0;
+}
+
+.mini-act-desc {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.mini-act-time {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.history-link {
+    background: transparent;
+    border: none;
+    color: var(--navy);
+    font-weight: 800;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.history-link:hover {
+    color: var(--emeraude);
+}
+
+@media (max-width: 1200px) {
+    .profile-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,528 @@
+/* ============================================================
+   PAGE VANILLE — Hazo Lova Agri-AI
+   Styles dédiés à /agri (AgriModule + VanillaLab)
+   ============================================================ */
+
+.pre-title {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--or);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.nav-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border-radius: 10px;
+}
+
+/* --- ONGLETS --- */
+.tab-navigation {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 28px;
+    border-bottom: var(--border-main);
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.tab-navigation::-webkit-scrollbar {
+    display: none;
+}
+
+.tab-btn {
+    flex: 0 0 auto;
+    padding: 14px 2px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: #94a3b8;
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.18s ease, border-color 0.18s ease;
+}
+
+.tab-btn:hover {
+    color: var(--emeraude);
+}
+
+.tab-btn.active {
+    color: var(--navy);
+    border-bottom-color: var(--navy);
+}
+
+/* --- STRUCTURE --- */
+.land-container-full {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.land-main-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 24px;
+    align-items: start;
+}
+
+.parcels-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 0;
+}
+
+.land-sidebar-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 0;
+}
+
+/* --- BANDEAU FIL ROUGE --- */
+.vanilla-flow {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    overflow: hidden;
+    background: var(--border-main);
+    border: var(--border-main);
+    border-radius: 18px;
+}
+
+.flow-step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 18px;
+    background: var(--blanc);
+}
+
+.flow-index {
+    flex: 0 0 auto;
+    font-family: "Syne", sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--or);
+    letter-spacing: 1px;
+}
+
+.flow-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.flow-text strong {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--navy);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.flow-text span {
+    font-size: 10px;
+    color: #64748b;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* --- CARTES DE METRIQUES --- */
+.land-stats-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.l-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+    padding: 18px 20px;
+    background: var(--blanc);
+    border: var(--border-main);
+    border-radius: 18px;
+}
+
+.l-stat-icon {
+    flex: 0 0 auto;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(45, 122, 88, 0.08);
+    color: var(--emeraude);
+}
+
+.l-stat-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.l-stat-label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #64748b;
+}
+
+.l-stat-value {
+    font-family: "Syne", sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--navy);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.model-banner {
+    background: var(--navy);
+    border: none;
+    color: var(--blanc);
+}
+
+.model-banner .l-stat-label {
+    color: #cbd5e1;
+}
+
+.model-banner .l-stat-value {
+    color: var(--blanc);
+}
+
+.model-banner .l-stat-icon {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--or);
+}
+
+/* --- FORMULAIRES --- */
+.registration-form-area {
+    background: var(--blanc);
+    padding: 32px;
+    border: var(--border-main);
+    border-radius: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.mutation-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 20px;
+}
+
+.mutation-form .form-field {
+    min-width: 0;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #64748b;
+}
+
+.form-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 14px;
+    background: var(--blanc);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    color: var(--navy);
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    outline: none;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.form-input:focus {
+    border-color: var(--emeraude);
+    box-shadow: 0 0 0 3px rgba(45, 122, 88, 0.12);
+}
+
+select.form-input {
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #64748b 50%),
+        linear-gradient(135deg, #64748b 50%, transparent 50%);
+    background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%;
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    padding-right: 36px;
+}
+
+input[type="file"].form-input {
+    padding: 10px 12px;
+    font-size: 12px;
+    background: var(--off-white);
+}
+
+.btn-submit-mutation {
+    grid-column: 1 / -1;
+    width: 100%;
+    padding: 16px 20px;
+    margin-top: 4px;
+    background: var(--navy);
+    color: var(--blanc);
+    border: none;
+    border-radius: 14px;
+    font-family: "Syne", sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.btn-submit-mutation:hover:not(:disabled) {
+    background: var(--emeraude);
+    transform: translateY(-1px);
+}
+
+.btn-submit-mutation:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.vanilla-verify-form .btn-submit-mutation {
+    width: auto;
+    min-width: 140px;
+    margin-top: 0;
+    align-self: flex-start;
+}
+
+/* --- LISTE DES LOTS --- */
+.parcels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+.parcel-card {
+    background: var(--blanc);
+    border: var(--border-main);
+    border-radius: 18px;
+    padding: 20px;
+    transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.parcel-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.parcel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.parcel-id {
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--emeraude);
+}
+
+.parcel-status {
+    padding: 4px 9px;
+    border-radius: 999px;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.parcel-info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 6px 0;
+    border-bottom: 1px dashed #eef2f7;
+    font-size: 12px;
+}
+
+.parcel-info-row:last-of-type {
+    border-bottom: none;
+}
+
+.parcel-label {
+    color: #64748b;
+    font-weight: 600;
+}
+
+.parcel-value {
+    color: var(--navy);
+    font-weight: 800;
+    text-align: right;
+}
+
+.parcel-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.parcel-btn {
+    flex: 1 1 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: var(--blanc);
+    color: var(--navy);
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.18s ease, border-color 0.18s ease;
+}
+
+.parcel-btn:hover {
+    border-color: var(--navy);
+}
+
+.parcel-btn.btn-details {
+    color: var(--emeraude);
+    border-color: rgba(45, 122, 88, 0.25);
+}
+
+.parcel-btn.btn-transfer {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--blanc);
+}
+
+.parcel-btn.btn-transfer:hover {
+    background: var(--emeraude);
+    border-color: var(--emeraude);
+}
+
+/* --- JOURNAL DE BORD --- */
+.land-history-card {
+    background: var(--blanc);
+    border: var(--border-main);
+    border-radius: 18px;
+    padding: 20px;
+}
+
+.land-activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.land-activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.act-icon-box {
+    flex: 0 0 auto;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    background: rgba(45, 122, 88, 0.08);
+}
+
+.act-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.act-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--navy);
+}
+
+.act-meta {
+    font-size: 10px;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1280px) {
+    .land-main-layout {
+        grid-template-columns: minmax(0, 1fr) 300px;
+    }
+    .land-stats-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1024px) {
+    .land-main-layout {
+        grid-template-columns: 1fr;
+    }
+    .vanilla-flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .land-sidebar-actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .tab-navigation {
+        gap: 20px;
+    }
+    .mutation-form {
+        grid-template-columns: 1fr;
+    }
+    .vanilla-flow {
+        grid-template-columns: 1fr;
+    }
+    .land-stats-summary,
+    .land-sidebar-actions {
+        grid-template-columns: 1fr;
+    }
+    .land-main-layout {
+        gap: 18px;
+    }
+    .registration-form-area {
+        padding: 20px;
+    }
+}

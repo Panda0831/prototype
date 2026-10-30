@@ -1,0 +1,12 @@
+# Reminder : Problème de Persistance (AgricultureManager)
+
+Le mécanisme de persistance actuel basé sur des fichiers Pickle (`data/persistence/`) dans `AgricultureManager` présente des instabilités majeures liées aux rechargements automatiques de FastAPI (`StatReload`) et à une potentielle corruption d'état des objets en mémoire.
+
+## État actuel :
+- Les données en mémoire sont effacées à chaque redémarrage du serveur.
+- La tentative de rechargement des fichiers `.pkl` échoue à retrouver les objets, malgré leur présence sur disque.
+
+## Solution requise (Post-MVP) :
+- Abandonner la persistance par fichier Pickle pour le module Agriculture.
+- Implémenter une persistance réelle via SQLAlchemy (Base de données SQLite existante) pour les `AgriculturalLot`.
+- Créer un modèle de base de données `AgriculturalLotModel` et mapper les opérations CRUD vers celui-ci.

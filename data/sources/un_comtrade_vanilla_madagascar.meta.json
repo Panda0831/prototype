@@ -1,0 +1,11 @@
+{
+  "source": "UN Comtrade — HS 0905.10, Madagascar (450), exportations",
+  "url": "https://comtradeapi.un.org/",
+  "years": [
+    2015,
+    2025
+  ],
+  "records": 457,
+  "exchange_rate_source": "World Bank PA.NUS.FCRF (MGA/USD)",
+  "fetched_at": "2026-10-29T23:32:01"
+}

@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "trained_at": "2026-10-30T01:06:10",
+  "dataset": "data/sources/un_comtrade_vanilla_madagascar.csv",
+  "weights": [
+    6.187795598266617,
+    0.12387479947206118,
+    -0.23788838768121726,
+    -0.9300178352717021,
+    -4.276463914558079
+  ],
+  "metrics": {
+    "n_years": 11,
+    "validation": "leave-one-year-out",
+    "loo_mae_usd_per_kg": 57.81,
+    "loo_rmse_usd_per_kg": 68.34,
+    "loo_r2": 0.7631,
+    "loo_mape_pct": 28.4
+  },
+  "series": [
+    {
+      "year": 2015,
+      "actual_usd": 72.97,
+      "fitted_usd": 92.55,
+      "mga_per_usd": 2933.51,
+      "actual_mga": 214071.0
+    },
+    {
+      "year": 2016,
+      "actual_usd": 254.6,
+      "fitted_usd": 209.06,
+      "mga_per_usd": 3176.54,
+      "actual_mga": 808757.0
+    },
+    {
+      "year": 2017,
+      "actual_usd": 433.74,
+      "fitted_usd": 380.67,
+      "mga_per_usd": 3116.11,
+      "actual_mga": 1351591.0
+    },
+    {
+      "year": 2018,
+      "actual_usd": 456.53,
+      "fitted_usd": 369.96,
+      "mga_per_usd": 3334.75,
+      "actual_mga": 1522404.0
+    },
+    {
+      "year": 2019,
+      "actual_usd": 397.35,
+      "fitted_usd": 446.22,
+      "mga_per_usd": 3618.32,
+      "actual_mga": 1437753.0
+    },
+    {
+      "year": 2020,
+      "actual_usd": 304.51,
+      "fitted_usd": 388.76,
+      "mga_per_usd": 3787.75,
+      "actual_mga": 1153424.0
+    },
+    {
+      "year": 2021,
+      "actual_usd": 246.71,
+      "fitted_usd": 273.21,
+      "mga_per_usd": 3829.98,
+      "actual_mga": 944892.0
+    },
+    {
+      "year": 2022,
+      "actual_usd": 237.14,
+      "fitted_usd": 211.14,
+      "mga_per_usd": 4096.12,
+      "actual_mga": 971344.0
+    },
+    {
+      "year": 2023,
+      "actual_usd": 197.17,
+      "fitted_usd": 201.96,
+      "mga_per_usd": 4429.58,
+      "actual_mga": 873377.0
+    },
+    {
+      "year": 2024,
+      "actual_usd": 50.86,
+      "fitted_usd": 45.48,
+      "mga_per_usd": 4525.42,
+      "actual_mga": 230173.0
+    },
+    {
+      "year": 2025,
+      "actual_usd": 44.84,
+      "fitted_usd": 46.76,
+      "mga_per_usd": 4529.75,
+      "actual_mga": 203102.0
+    }
+  ]
+}

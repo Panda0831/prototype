@@ -1,0 +1,38 @@
+LOGIQUE DU DIAGRAMME DE CLASSES - PROJET HAZO LOVA
+======================================================
+
+Cette architecture est optimisée pour répondre aux défis de Madagascar (basse consommation, infrastructures fragiles) en combinant la rigueur de la blockchain et l'efficacité des algorithmes classiques.
+
+1. COUCHE DE DONNÉES (L'IMMUTABILITÉ)
+--------------------------------------
+- Transaction : L'unité de base. Elle porte un 'Type' (VANILLE, DIPLÔME, TERRAIN, CRÉDIT). Sa signature garantit l'origine et son 'Hash' garantit son intégrité.
+- Block : Regroupe les transactions. Il utilise un 'MerkleTree' pour permettre une vérification rapide (Light Client) sans avoir à télécharger tout le bloc, ce qui est crucial pour les connexions lentes.
+- Blockchain : Le registre global. Elle gère la difficulté adaptative et assure que la chaîne la plus longue est la vérité.
+
+2. COUCHE RÉSEAU (LA DÉCENTRALISATION)
+---------------------------------------
+- Node : Représente un point du réseau (un district). Il possède des méthodes de propagation.
+- Validator (Hérite de Node) : Un nœud spécial avec un 'Stake' (enjeu). C'est lui qui crée les blocs. Cette séparation permet d'avoir des nœuds qui ne font que lire et des nœuds qui sécurisent.
+
+3. COUCHE INTELLIGENCE (L'OPTIMISATION)
+----------------------------------------
+- Graph : Modélise les 119 districts de Madagascar comme des sommets.
+- AStar (A*) : Utilisé par les nœuds pour trouver le chemin le plus court/économe pour propager une transaction à travers l'île.
+- QLearning : L'IA qui analyse les performances des validateurs (temps de réponse, fiabilité) pour sélectionner intelligemment qui doit valider le prochain bloc afin d'économiser l'énergie globale.
+
+4. COUCHE MÉTIER (LA CONFIANCE)
+-------------------------------
+- Union-Find : Structure de données ultra-rapide utilisée spécifiquement pour le foncier (BF-04). Elle permet de détecter instantanément si deux parcelles appartiennent à des groupes de propriété conflictuels (anti-double vente).
+- Actor : L'utilisateur final. Son rôle (UNIVERSITÉ, PROPRIÉTAIRE, etc.) définit ses droits sur les transactions qu'il peut initier.
+
+RELATIONS CLÉS :
+----------------
+- Blockchain (1) <> (*) Block : Composition forte.
+- Block (1) <> (1) MerkleTree : Relation de service pour l'intégrité.
+- QLearning --> Validator : Sélection stratégique.
+- AStar --> Graph : Navigation spatiale.
+- Union-Find --> Transaction : Validation de non-conflit.
+
+POURQUOI CETTE LOGIQUE ?
+------------------------
+Elle transforme une blockchain "lourde" en une infrastructure agile où l'IA (Q-Learning) et les algorithmes de graphes (A*) compensent les faiblesses matérielles par une efficacité logicielle supérieure.

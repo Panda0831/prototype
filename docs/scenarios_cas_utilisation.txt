@@ -1,0 +1,43 @@
+SCÉNARIOS DES CAS D'UTILISATION - PROJET HAZO LOVA
+======================================================
+
+Ce document décrit comment les acteurs malgaches utilisent le système en 2035.
+Il sert de base pour comprendre les interactions avant de coder les interfaces.
+
+1. LISTE DES ACTEURS ET LEURS RÔLES
+-----------------------------------
+- Émetteur (Producteur, Université, Propriétaire) : Celui qui crée une donnée.
+- Validateur (Coopérative, Nœud de district) : Celui qui sécurise le réseau.
+- Vérificateur (Recruteur, Acheteur, État) : Celui qui contrôle l'authenticité.
+- Système (Hazo Lova) : L'infrastructure qui exécute les algorithmes (A*, Q-Learning, Union-Find).
+
+2. SCÉNARIO A : ENREGISTREMENT SÉCURISÉ (EX: VENTE DE TERRAIN)
+--------------------------------------------------------------
+"Empêcher la double vente grâce à l'algorithme Union-Find"
+
+1. Le Propriétaire initie une transaction pour vendre sa parcelle à un Acheteur.
+2. Le SYSTÈME utilise l'algorithme 'Union-Find' pour vérifier instantanément si la parcelle n'appartient pas déjà à un autre groupe de propriété (détection de conflit foncier).
+3. Si aucun conflit n'est détecté, la transaction est signée numériquement.
+4. La transaction est mise en attente (Mempool) pour être intégrée dans le prochain bloc.
+
+3. SCÉNARIO B : VALIDATION INTELLIGENTE (LE CŒUR DU SYSTÈME)
+------------------------------------------------------------
+"Optimiser l'énergie et le réseau grâce à l'IA et aux Graphes"
+
+1. Plusieurs transactions sont en attente de validation.
+2. Le SYSTÈME utilise l'IA 'Q-Learning' pour analyser l'état des districts (énergie disponible, latence réseau).
+3. L'IA sélectionne le 'Validateur' (Coopérative) le plus apte à créer le bloc pour économiser les ressources de l'île.
+4. Une fois le bloc créé, le SYSTÈME utilise l'algorithme 'A*' pour trouver le chemin le plus court sur le 'Graphe' des 119 districts afin de propager le nouveau bloc rapidement.
+
+4. SCÉNARIO C : VÉRIFICATION D'AUTHENTICITÉ (EX: DIPLÔME)
+---------------------------------------------------------
+"Garantir la confiance sans intermédiaire"
+
+1. Un Diplômé présente son certificat numérique à un Recruteur.
+2. Le Recruteur scanne le certificat (ou entre l'ID de transaction).
+3. Le SYSTÈME parcourt la 'Blockchain' et utilise l' 'Arbre de Merkle' pour confirmer que ce diplôme existe dans un bloc validé.
+4. Résultat immédiat : "Authentique" ou "Falsifié".
+
+POURQUOI CES SCÉNARIOS SONT IMPORTANTS ?
+----------------------------------------
+Ils prouvent au jury que vos algorithmes (Union-Find, Q-Learning, A*) ne sont pas là "pour faire joli", mais qu'ils répondent à des problèmes réels de Madagascar : la fraude foncière, les coupures d'énergie et les infrastructures de transport/réseau limitées.
